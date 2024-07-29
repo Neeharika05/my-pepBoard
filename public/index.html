@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>OpenBoard_Clone</title>
+</head>
+<body>
+  <div class="options-cont">
+    <i class="fa-sharp fa-solid fa-bars" style="color: navy;"></i>
+    </div>
+    <div class="tool-cont scale-tools">
+        <i id="pencil" class="fa-solid fa-pen fa-3x" style="color: #B197FC;"></i>
+        <i id="eraser" class="fa-solid fa-star fa-3x" style="color: #74C0FC;"></i>
+        <i id="image" class="fa-solid fa-image fa-3x" style="color: #61ee3a;"></i>
+        <i id="download" class="fa-solid fa-download fa-3x" style="color: #fd8d0d;"></i>
+         <i id="sticky" class="fa-solid fa-wand-magic-sparkles fa-3x" style="color: #63E6BE;"></i>
+         <i id="redo" class="fa-solid fa-arrow-rotate-right fa-3x" style="color: #ff2424;"></i>
+         <i id="undo" class="fa-solid fa-arrow-rotate-left fa-3x" style="color: #ff2424;"></i>
+    </div> 
+    <div class="pencil-tool-cont">
+        <div class="pencil-width-cont">
+            <input type="range" min="2" max="10" value="3" class="pencil-width">
+        </div>
+        <div class="pencil-color-cont">
+            <div class="black pencil-color"></div>
+            <div class="red pencil-color"></div>
+            <div class="cadetblue pencil-color"></div>
+        </div>
+    </div>
+    <div class="eraser-tool-cont">
+        <input type="range" min="2" max="10" value="3" class="eraser-width">
+    </div>
+    <canvas></canvas>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+    <script>
+        let socket = io.connect("http://localhost:5000");
+    </script>
+    <script src="tool.js"></script>
+    <script src = "canvas.js"></script>
+</body>
+</html>
